@@ -11,7 +11,7 @@
 		</strong>
 	</div>
 
-	{!! Form::model($pengguna,['url'=>'pengguna/edit'.$pengguna->id,'class'=>'form-horizontal']) !!}
+	{!! Form::model($pengguna,['url'=>'pengguna/edit/'.$pengguna->id,'class'=>'form-horizontal']) !!}
 
 	@include('pengguna.form')
 

@@ -12,13 +12,13 @@
 
 	<table class="table">
 		<tr>
-			<td>Username</td>
+			<td>username</td>
 			<td>:</td>
 			<td>{{ $pengguna->username }}</td>
 		</tr>
 
 		<tr>
-			<td>Password</td>
+			<td>password</td>
 			<td>:</td>
 			<td>{{ $pengguna->password }}</td>
 		</tr>

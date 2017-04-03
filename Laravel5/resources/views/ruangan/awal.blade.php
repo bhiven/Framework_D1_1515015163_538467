@@ -33,7 +33,7 @@
 								<i class="fa fa-pencil"></i>
 							</a>
 
-							<a href="{{url('ruangan/lihat/'.$ruangan->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Lihat">
+							<a href="{{url('ruangan/'.$ruangan->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Lihat">
 								<i class="fa fa-eye"></i>
 							</a>
 

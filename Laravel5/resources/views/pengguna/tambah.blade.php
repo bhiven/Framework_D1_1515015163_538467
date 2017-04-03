@@ -4,14 +4,14 @@
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		<strong>
-			<a href="{{url('pengguna')}}">
+			<a href="{{url('pengguna')}}" style="color: white">
 				<i class="fa text-default fa-chevron-left"></i>
 			</a>
-			Data Pengguna
+			Tambah Data Pengguna
 		</strong>
 	</div>
 
-	{!! Form::model($pengguna,['url'=>'pengguna/simpan','class'=>'form-horizontal']) !!}
+	{!! Form::open(['url'=>'pengguna/simpan','class'=>'form-horizontal']) !!}
 
 	@include('pengguna.form')
 

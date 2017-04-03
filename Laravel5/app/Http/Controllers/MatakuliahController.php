@@ -19,7 +19,7 @@ class MatakuliahController extends Controller
         return view('matakuliah.tambah');
     }
 
-    public function simpan(Requests $input)
+    public function simpan(Request $input)
     {
         $matakuliah =new matakuliah();
         $matakuliah->title = $input->title;

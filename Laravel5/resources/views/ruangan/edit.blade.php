@@ -11,7 +11,7 @@
 		</strong>
 	</div>
 
-	{!! Form::model($ruangan,['url'=>'ruangan/edit'.$ruangan->id,'class'=>'form-horizontal']) !!}
+	{!! Form::model($ruangan,['url'=>'ruangan/edit/'.$ruangan->id,'class'=>'form-horizontal']) !!}
 
 	@include('ruangan.form')
 

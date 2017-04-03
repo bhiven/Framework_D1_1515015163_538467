@@ -19,7 +19,7 @@ class PenggunaController extends Controller
     	return view('pengguna.tambah');
     }
 
-    public function simpan(Requests $input)
+    public function simpan(Request $input)
     {
     	$pengguna =new pengguna();
     	$pengguna->username = $input->username;

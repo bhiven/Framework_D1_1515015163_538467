@@ -19,11 +19,10 @@ class RuanganController extends Controller
         return view('ruangan.tambah');
     }
 
-    public function simpan(Requests $input)
+    public function simpan(Request $input)
     {
         $ruangan =new ruangan;
         $ruangan->title = $input->title;
-        $ruangan->keterangan = $input->keterangan;
         $informasi = $ruangan->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
         return redirect('ruangan') -> with(['informasi'=>$informasi]);
     }

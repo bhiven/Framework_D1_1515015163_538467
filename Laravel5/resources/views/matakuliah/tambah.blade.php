@@ -4,14 +4,14 @@
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		<strong>
-			<a href="{{url('matakuliah')}}">
+			<a href="{{url('matakuliah')}}" style="color: white">
 				<i class="fa text-default fa-chevron-left"></i>
 			</a>
-			Data matakuliah
+			Tambah Data matakuliah
 		</strong>
 	</div>
 
-	{!! Form::model($matakuliah,['url'=>'matakuliah/simpan','class'=>'form-horizontal']) !!}
+	{!! Form::open(['url'=>'matakuliah/simpan','class'=>'form-horizontal']) !!}
 
 	@include('matakuliah.form')
 

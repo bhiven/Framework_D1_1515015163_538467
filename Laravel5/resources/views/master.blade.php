@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>@yield('page_title','Halaman Awal') | Laboratorium Pemograman FW</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('component/bootstrap/dist/css/bootstrap.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('component/font-awesome/css/font=awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('component/font-awesome/css/font-awesome.min.css')}}">
 	<style type="text/css">
 		body 
 		{

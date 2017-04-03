@@ -6,7 +6,7 @@
 		<strong>Seluruh Data Pengguna</strong>
 
 		<a href="{{url('pengguna/tambah')}}" class="btn btn-xs btn-primary pull-right">
-			<i class="fa fa-plus"></i> Pengguna
+			<i class="fa fa-plus"></i> pengguna
 		</a>
 
 		<div class="clearfix"></div>
@@ -16,8 +16,8 @@
 		<thead>
 			<tr>
 				<th>No.</th>
-				<th>Username</th>
-				<th>Password</th>
+				<th>usename</th>
+				<th>password</th>
 				<th>Aksi</th>
 			</tr>
 		</thead>
@@ -26,20 +26,20 @@
 			@foreach ($data as $pengguna)
 				<tr>
 					<td>{{ $x++ }}</td>
-					<td>{{ $pengguna->username or 'username kosong'}}</td>
+					<td>{{ $pengguna->username or 'usename kosong'}}</td>
 					<td>{{ $pengguna->password or 'password kosong'}}</td>
 
 					<td>
 						<div class="btn-group" role="group">
-							<a href="{{url('pengguna/edit/'.$pengguna->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah">
+							<a href="{{url('pengguna/edit/'.$pengguna->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" usename="Ubah">
 								<i class="fa fa-pencil"></i>
 							</a>
 
-							<a href="{{url('pengguna/lihat/'.$pengguna->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Lihat">
+							<a href="{{url('pengguna/'.$pengguna->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" usename="Lihat">
 								<i class="fa fa-eye"></i>
 							</a>
 
-							<a href="{{url('pengguna/hapus/'.$pengguna->id)}}" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Hapus">
+							<a href="{{url('pengguna/hapus/'.$pengguna->id)}}" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" usename="Hapus">
 								<i class="fa fa-remove"></i>
 							</a>
 						</div>

@@ -35,7 +35,7 @@
 								<i class="fa fa-pencil"></i>
 							</a>
 
-							<a href="{{url('matakuliah/lihat/'.$matakuliah->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Lihat">
+							<a href="{{url('matakuliah/'.$matakuliah->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Lihat">
 								<i class="fa fa-eye"></i>
 							</a>
 

@@ -11,7 +11,7 @@
 		</strong>
 	</div>
 
-	{!! Form::model($matakuliah,['url'=>'matakuliah/edit'.$matakuliah->id,'class'=>'form-horizontal']) !!}
+	{!! Form::model($matakuliah,['url'=>'matakuliah/edit/'.$matakuliah->id,'class'=>'form-horizontal']) !!}
 
 	@include('matakuliah.form')
 
