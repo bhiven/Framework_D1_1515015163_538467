@@ -9,7 +9,7 @@ class pengguna extends Model
     protected $table = 'pengguna';
     protected $fillable = ['username','password'];
 
-    /*public function dosen()
+    public function dosen()
     {
     	return $this->hasOne(dosen::class);
     }
@@ -23,12 +23,5 @@ class pengguna extends Model
     {
     	return $this->belongsToMany(Peran::class);
     }
-
-    $pengguna = App\pengguna::find(1);
-
-    foreach ($pengguna as $peran) 
-    {
-    	 $pengguna = App\pengguna::find(1)->where('peran_id','2')->get();
-    }
-    */
+    
 }

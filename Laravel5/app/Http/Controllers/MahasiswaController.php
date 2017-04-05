@@ -11,22 +11,52 @@ class MahasiswaController extends Controller
 {
     public function awal()
     {
-    	return "Hello dari Mahasiswa Controller";
+        return view('Mahasiswa.awal', ['data'=> Mahasiswa::all()]);
     }
 
     public function tambah()
     {
-    	return $this->simpan();
+        return view('Mahasiswa.tambah');
     }
 
-    public function simpan()
+    public function simpan(Request $input)
     {
-    	$Mahasiswa =new Mahasiswa();
-    	$Mahasiswa->nama = 'jon doe';
-    	$Mahasiswa->nim = '1515015163';
-		$Mahasiswa->alamat = 'jl antasari';
-		$Mahasiswa->pengguna_id = '1';
-    	$Mahasiswa->save();
-    	return "data dengan nama {$Mahasiswa->nama} telah disimpan";
+        $Mahasiswa =new Mahasiswa();
+        $Mahasiswa->nama = $input->nama;
+        $Mahasiswa->nim = $input->nim;
+        $Mahasiswa->alamat = $input->alamat;
+        $Mahasiswa->pengguna_id = $input->pengguna_id;
+        $informasi = $Mahasiswa->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
+        return redirect('Mahasiswa') -> with(['informasi'=>$informasi]);
+    }
+    
+    public function edit($id)
+    {
+        $Mahasiswa = Mahasiswa::find($id);
+        return view('Mahasiswa.edit')-> with (array('Mahasiswa'=>$Mahasiswa));
+    }
+
+    public function lihat($id)
+    {
+        $Mahasiswa = Mahasiswa::find($id);
+        return view('Mahasiswa.lihat')-> with (array('Mahasiswa'=>$Mahasiswa));
+    }
+
+    public function update($id, Request $input)
+    {
+        $Mahasiswa = Mahasiswa::find($id);
+        $Mahasiswa->nama = $input->nama;
+        $Mahasiswa->nim = $input->nim;
+        $Mahasiswa->alamat = $input->alamat;
+        $Mahasiswa->pengguna_id = $input->pengguna_id;
+        $informasi = $Mahasiswa->save() ? 'Berhasil update data' : 'Gagal update data';
+        return redirect('Mahasiswa') -> with(['informasi'=>$informasi]);
+    }
+
+    public function hapus($id)
+    {
+        $Mahasiswa = Mahasiswa::find($id);
+        $informasi = $Mahasiswa->delete() ? 'Berhasil hapus data' : 'Gagal  data';
+        return redirect('Mahasiswa') -> with(['informasi'=>$informasi]);
     }
 }

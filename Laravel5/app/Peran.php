@@ -8,8 +8,8 @@ class Peran extends Model
 {
     protected $table = 'peran';
 
-    /*public function pengguna()
+    public function pengguna()
     {
     	return $this->belongToMany(pengguna::class);
-    }*/
+    }
 }
