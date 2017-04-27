@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\PenggunaRequest;
 use App\Http\Requests;
 use App\pengguna;
 
@@ -19,13 +20,14 @@ class PenggunaController extends Controller
     	return view('pengguna.tambah');
     }
 
-    public function simpan(Request $input)
+    public function simpan(PenggunaRequest $input)
     {
-    	$pengguna =new pengguna();
+        $pengguna =new pengguna();
     	$pengguna->username = $input->username;
     	$pengguna->password = $input->password;
     	$informasi = $pengguna->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
     	return redirect('pengguna') -> with(['informasi'=>$informasi]);
+
     }
     
     public function edit($id)
@@ -40,7 +42,7 @@ class PenggunaController extends Controller
         return view('pengguna.lihat')-> with (array('pengguna'=>$pengguna));
     }
 
-    public function update($id, Request $input)
+    public function update($id, PenggunaRequest $input)
     {
         $pengguna = pengguna::find($id);
         $pengguna->username = $input->username;

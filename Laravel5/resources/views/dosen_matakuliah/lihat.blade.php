@@ -4,41 +4,47 @@
 <div class="panel panel-warning">
 	<div class="panel-heading">
 		<strong>
-			<a href="{{url('dosen')}}">
+			<a href="{{url('dosen_matakuliah')}}">
 				<i style="color: #8a6d3b" class="fa text-default fa-chevron-left"></i>
-			</a>Detail Data Dosen
+			</a>Detail Data Mahasiswa
 		</strong>
 	</div>
 
 	<table class="table">
 		<tr>
-			<td>Nama</td>
+			<td>Nama Dosen/td>
 			<td>:</td>
-			<td>{{ $Dosen->nama }}</td>
+			<td>
+				{{ $dosen_matakuliah->dosen_matakuliah->dosen->nama }}
+			</td>
 		</tr>
 
 		<tr>
-			<td>NIP</td>
+			<td>NIP Dosen</td>
 			<td>:</td>
-			<td>{{ $Dosen->nip }}</td>
+			<td>
+				{{ $dosen_matakuliah->dosen_matakuliah->dosen->nip }}
+			</td>
 		</tr>
 
 		<tr>
-			<td>Alamat</td>
+			<td>Nama Matakuliah</td>
 			<td>:</td>
-			<td>{{ $Dosen->alamat }}</td>
+			<td>
+				{{ $dosen_matakuliah->dosen_matakuliah->matakuliah->title }}
+			</td>
 		</tr>
 
 		<tr>
 			<td class="col-xs-4">Dibuat tanggal</td>
 			<td class="col-xs-1">:</td>
-			<td>{{ $Dosen->created_at }}</td>
+			<td>{{ $Mahasiswa->created_at }}</td>
 		</tr>
 
 		<tr>
 			<td class="col-xs-4">Diperbarui tanggal</td>
 			<td class="col-xs-1">:</td>
-			<td>{{ $Dosen->updated_at }}</td>
+			<td>{{ $Mahasiswa->updated_at }}</td>
 		</tr>
 	</table>
 </div>

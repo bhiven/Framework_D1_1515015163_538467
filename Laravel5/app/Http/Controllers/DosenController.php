@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\DosenRequest;
 use App\Http\Requests;
 use App\Dosen;
+use App\Pengguna;
 
 class DosenController extends Controller
 {
@@ -22,7 +24,7 @@ class DosenController extends Controller
         return view('Dosen.tambah');
     }
 
-    public function simpan(Request $input)
+    public function simpan(DosenRequest $input)
     {
         $Pengguna = new Pengguna($input->only('username','password'));
 
@@ -44,18 +46,18 @@ class DosenController extends Controller
     public function edit($id)
     {
         $Dosen = Dosen::find($id);
-        return view('Dosen.edit')-> with (array('Dosen'=>$Mahasiswa));
+        return view('Dosen.edit')-> with (array('Dosen'=>$Dosen));
     }
 
     public function lihat($id)
     {
-        $Mahasiswa = Mahasiswa::find($id);
-        return view('Dosen.lihat')-> with (array('Dosen'=>$Mahasiswa));
+        $Dosen = Dosen::find($id);
+        return view('Dosen.lihat')-> with (array('Dosen'=>$Dosen));
     }
 
-    public function update($id, Request $input)
+    public function update($id, DosenRequest $input)
     {
-        $Dosen = Mahasiswa::find($id);
+        $Dosen = Dosen::find($id);
         $Pengguna = $Dosen->Pengguna;
         $Dosen->nama = $input->nama;
         $Dosen->nip = $input->nip;
@@ -68,16 +70,16 @@ class DosenController extends Controller
             {
                 $Pengguna->password = $input->password;
             }
-
-            if ($Pengguna-save()) 
+            if ($Pengguna-save())
             {
                 $this->informasi = 'Berhasil Simpan Data';
             }
-            else
-            {
-                $this->informasi = 'Gagal Simpan Data';   
-            }
+        }    
+        else
+        {
+            $this->informasi = 'Gagal Simpan Data';   
         }
+        
 
         return redirect('Dosen') -> with(['informasi'=>$informasi]);
     }
@@ -94,7 +96,6 @@ class DosenController extends Controller
             }
             
         }
-
-        return redirect('Dosen') -> with(['informasi'=>$informasi]);
+        return redirect('Dosen') -> with(['informasi'=>$this->informasi]);
     }
 }

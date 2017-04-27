@@ -27,7 +27,7 @@
 				<tr>
 					<td>{{ $x++ }}</td>
 					<td>{{ $dosen->nama or 'nama kosong'}}</td>
-					<td>{{ $dosen->nim or 'nim kosong'}}</td>
+					<td>{{ $dosen->nip or 'nip kosong'}}</td>
 
 					<td>
 						<div class="btn-group" role="group">

@@ -11,12 +11,21 @@ class Dosen extends Model
 
     public function pengguna()
     {
-    	return $this->belongTo(pengguna::class);
+    	return $this->belongsTo(pengguna::class);
     }
 
     public function dosen_matakuliah()
     {
     	return $this->hasMany(dosen_matakuliah::class);
     }
+    
+    public function listDosenDanNip()
+   {
+      $out = [];
+      foreach ($this->all() as $dsn) {
+         $out[$dsn->id] = "{$dsn->nama} ({$dsn->nip})";
+      }
+      return $out;
+   }
 
 }

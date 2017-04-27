@@ -7,13 +7,13 @@
 			<a href="{{url('mahasiswa')}}">
 				<i class="fa text-default fa-chevron-left"></i>
 			</a>
-			Perbarui Data Mahasiswa
+			Perbarui Data jadwal Mahasiswa
 		</strong>
 	</div>
 
-	{!! Form::model($Mahasiswa,['url'=>'mahasiswa/edit/'.$Mahasiswa->id,'class'=>'form-horizontal']) !!}
-
-	@include('mahasiswa.form')
+	{!! Form::model($jadwal_matakuliah,['url'=>'jadwal_matakuliah/edit/'.$jadwal_matakuliah->id,'class'=>'form-horizontal']) !!}
+		
+	@include('jadwal_matakuliah.form')
 
 	<div style="width: 100%;text-align: right;">
 		<button class="btn btn-info">

@@ -9,7 +9,7 @@ class Ruangan extends Model
     protected $table = 'Ruangan';
     protected $fillable = ['title'];
 
-    public function dosen_matakuliah()
+    public function jadwal_matakuliah()
 	{
 		return $this->hasMany(jadwal_matakuliah::class); 
 	}

@@ -11,9 +11,9 @@
 		</strong>
 	</div>
 
-	{!! Form::model($Mahasiswa,['url'=>'mahasiswa/edit/'.$Mahasiswa->id,'class'=>'form-horizontal']) !!}
+	{!! Form::model($dosen_matakuliah,['url'=>'dosen_matakuliah/edit/'.$dosen_matakuliah->id,'class'=>'form-horizontal']) !!}
 
-	@include('mahasiswa.form')
+	@include('dosen_matakuliah.form')
 
 	<div style="width: 100%;text-align: right;">
 		<button class="btn btn-info">
